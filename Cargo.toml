@@ -1,0 +1,8 @@
+[package]
+name = "ml_single_variable_linear_regression"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+chrono = "0.4.40"
+indicatif = "0.17.11"
