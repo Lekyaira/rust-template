@@ -7,6 +7,6 @@ nix-shell
 ```
 or 
 ```
-echo "use nix" && direnv allow
+echo "use nix" > .envrc && direnv allow
 ```
 Then just `cargo init` as normal and get start coding!
