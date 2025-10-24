@@ -17,6 +17,9 @@ pkgs.mkShell {
   # C/C++ libraries go here.
   nativeBuildInputs = with pkgs; [
     rust_toolchain
+		lld clang
+		pkg-config
+#alsa-lib udev pkg-config
   ];
 
   # Other dependencies, cli tools, etc go here.
@@ -27,8 +30,10 @@ pkgs.mkShell {
   TMPDIR = "${pd}/.cargo/target";
   CARGO_HOME = "${pd}/.cargo";
   CARGO_TARGET_DIR = "${pd}/.cargo/target";
+	CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER = "clang";
   # Libraries
-  # LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [ pkgs.openssl pkgs.sqlite ];
+  LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [ 
+	];
 
   shellHook = ''
 #### Cargo ####
